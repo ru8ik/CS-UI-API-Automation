@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Testing", "AgData QA Techincal Assesment Newest\API_Testing.csproj", "{F51AF5EE-E2E2-416F-A076-0B287B105112}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Testing", "UI_Testing\UI_Testing.csproj", "{9E64B667-26C2-4A10-84E9-A17F1CEDF0B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F51AF5EE-E2E2-416F-A076-0B287B105112}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F51AF5EE-E2E2-416F-A076-0B287B105112}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F51AF5EE-E2E2-416F-A076-0B287B105112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E64B667-26C2-4A10-84E9-A17F1CEDF0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E64B667-26C2-4A10-84E9-A17F1CEDF0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E64B667-26C2-4A10-84E9-A17F1CEDF0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E64B667-26C2-4A10-84E9-A17F1CEDF0B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

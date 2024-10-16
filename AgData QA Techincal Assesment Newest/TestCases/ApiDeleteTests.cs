@@ -25,7 +25,7 @@ namespace AgData_QA_Techincal_Assesment_Newest.TestCases
         {
             var invalidUrl = "https://jsonplaceholder.typicode.com/posts/aaa999";
             var response = await ApiHelper.ExecuteDeleteRequest(invalidUrl);
-            ClassicAssert.AreEqual(200, (int)response.StatusCode); // should retutn 404
+            ClassicAssert.AreEqual(401, (int)response.StatusCode); // should retutn 404
         }
     }
 }

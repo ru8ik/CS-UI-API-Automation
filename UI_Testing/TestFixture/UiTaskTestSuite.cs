@@ -8,6 +8,7 @@ using OpenQA.Selenium.Support.UI;
 using FluentAssertions;
 using System.Collections.Generic;
 using UI_Testing.PageObjects;
+using System.Security.Policy;
 
 namespace UI_Testing.TestFixture
 {
@@ -67,12 +68,14 @@ namespace UI_Testing.TestFixture
         }
 
         // Test that verifies Market Intelligence sub-menu
-        [Test]
+        [Test, TestCaseSource(nameof(UrlTestCases))]
         [AllureDescription("Happy path test: clicking on Market Intelligence submenu.")]
         [Obsolete]
-        public void GotToMarketIntelligenceSubmenu()
+        public void GotToMarketIntelligenceSubmenu(string url, string expectedUrl)
         {
-            _driver.Navigate().GoToUrl("https://www.agdata.com/");
+            //_driver.Navigate().GoToUrl("https://www.agdata.com/");
+            _driver.Navigate().GoToUrl(url);
+
 
             // Click on "Solutions" menu
             _mainPage.ClickSolutionsMenu();
@@ -116,6 +119,7 @@ namespace UI_Testing.TestFixture
             yield return new TestCaseData("https://www.agdata.com/", "https://www.agdata.com/#");
 
         }
+
 
 
         // Helper method for screenshots

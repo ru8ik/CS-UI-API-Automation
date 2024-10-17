@@ -13,30 +13,45 @@ namespace AgData_QA_Techincal_Assesment_Newest.Utilities
         // GET request helper with Console OUtput 
         public static async Task<RestResponse> ExecuteGetRequest(string url)
         {
-            Console.WriteLine($"GET Request to {url}");  // Log the GET request URL
+            try
+            {
+                Console.WriteLine($"GET Request to {url}");  // Log the GET request URL
+                var request = new RestRequest(url, Method.Get); // Create a GET request
+                var response = await client.ExecuteAsync(request); // Execute the request
 
-            var request = new RestRequest(url, Method.Get); // Create a GET request
-            var response = await client.ExecuteAsync(request);  // Execute the request
+                // Log the response status and content
+                Console.WriteLine($"Response Status: {response.StatusCode}");
+                Console.WriteLine($"Response Body: {response.Content}");
 
-            // Log the response status and content
-            Console.WriteLine($"Response Status: {response.StatusCode}");
-            Console.WriteLine($"Response Body: {response.Content}");
-
-            return response;  // Return the response to be used in the test cases
+                return response; // Return the response to be used in the test cases
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw;
+            }
         }
 
 
         // POST request helper with Console OUtput 
         public static async Task<RestResponse> ExecutePostRequest<T>(string url, T body)
         {
-            Console.WriteLine($"POST Request to {url} with body: {JsonConvert.SerializeObject(body)}");
-            var request = new RestRequest(url, Method.Post);
-            request.AddJsonBody(JsonConvert.SerializeObject(body));
+            try
+            {
+                Console.WriteLine($"POST Request to {url} with body: {JsonConvert.SerializeObject(body)}");
+                var request = new RestRequest(url, Method.Post);
+                request.AddJsonBody(JsonConvert.SerializeObject(body));
 
-            var response = await client.ExecuteAsync(request);
-            Console.WriteLine($"Response: {response.StatusCode}, {response.Content}");
+                var response = await client.ExecuteAsync(request);
+                Console.WriteLine($"Response: {response.StatusCode}, {response.Content}");
 
-            return response;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw;
+            }
         }
 
 

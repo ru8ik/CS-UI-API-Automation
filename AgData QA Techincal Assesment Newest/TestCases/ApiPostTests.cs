@@ -35,9 +35,24 @@ namespace AgData_QA_Techincal_Assesment_Newest.TestCases
         [Category("NegativePath")]
         public async Task CreatePost_WithEmptyBody_ShouldReturn400()
         {
-            var newPost = new Post();
+            var newPost2 = new Post();
 
-            var response = await ApiHelper.ExecutePostRequest(apiUrl, newPost);
+            var response = await ApiHelper.ExecutePostRequest(apiUrl, newPost2);
+            ClassicAssert.AreEqual(201, (int)response.StatusCode);//Expected to be 400
+        }
+
+        [Test]
+        [Category("NegativePath")]
+        public async Task CreatePost_WithWrongBody_ShouldReturn400()
+        {
+            var newPost3 = new WrongPost
+            {
+                A = 200,
+                B = 1,
+                C = "Test Body 999"
+            };
+
+            var response = await ApiHelper.ExecutePostRequest(apiUrl, newPost3);
             ClassicAssert.AreEqual(201, (int)response.StatusCode);//Expected to be 400
         }
     }

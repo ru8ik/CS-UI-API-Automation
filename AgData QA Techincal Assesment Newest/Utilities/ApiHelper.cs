@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; 
 using System.Threading.Tasks;
 using RestSharp;
 using Newtonsoft.Json;
@@ -44,7 +44,7 @@ namespace AgData_QA_Techincal_Assesment_Newest.Utilities
         public static async Task<RestResponse> ExecutePutRequest<T>(string url, T body)
         {
 
-            Console.WriteLine($"POST Request to {url} with body: {JsonConvert.SerializeObject(body)}");
+            Console.WriteLine($"PUT Request to {url} with body: {JsonConvert.SerializeObject(body)}");
             var request = new RestRequest(url, Method.Put);
             request.AddJsonBody(JsonConvert.SerializeObject(body));
 

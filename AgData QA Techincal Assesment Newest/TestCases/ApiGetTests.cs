@@ -30,9 +30,9 @@ namespace AgData_QA_Techincal_Assesment_Newest.TestCases
         [Category("NegativePath")]
         public async Task GetPosts_InvalidUrl_ShouldReturn404()
         {
-            var invalidUrl = apiUrl + "/invalid999";
+            var invalidUrl = apiUrl + "TEST";
             var response = await ApiHelper.ExecuteGetRequest(invalidUrl);
-            ClassicAssert.AreEqual(404, (int)response.StatusCode);
+            ClassicAssert.AreEqual(404, (int)response.StatusCode, "Should Return 404.");
         }
     }
 }

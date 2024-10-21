@@ -107,9 +107,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PageObjects\ContactPage.cs" />
+    <Compile Include="PageObjects\MainPages\CompanyPage.cs" />
+    <Compile Include="PageObjects\MainPages\ContactPage.cs" />
     <Compile Include="PageObjects\MainPage.cs" />
-    <Compile Include="PageObjects\SolutionPage.cs" />
+    <Compile Include="PageObjects\MainPages\MarketPage.cs" />
+    <Compile Include="PageObjects\MainPages\ResourcesPage.cs" />
+    <Compile Include="PageObjects\MainPages\SolutionPage.cs" />
+    <Compile Include="PageObjects\SubMenuPages\DataManagmentPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestFixture\UiTaskTestSuite.cs" />
   </ItemGroup>

@@ -55,5 +55,10 @@ namespace AgData_QA_Techincal_Assesment_Newest.TestCases
             var response = await ApiHelper.ExecutePostRequest(apiUrl, newPost3);
             ClassicAssert.AreEqual(201, (int)response.StatusCode);//Expected to be 400
         }
+
+
+        //Add test for payload return
+
+
     }
 }

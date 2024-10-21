@@ -3,7 +3,9 @@ using System.Threading.Tasks;
 using RestSharp;
 using Newtonsoft.Json;
 
-
+//
+// Rewrite and optimeze the helpers --> less redundancy 
+//
 namespace AgData_QA_Techincal_Assesment_Newest.Utilities
 {
     public static class ApiHelper
